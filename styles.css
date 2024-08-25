@@ -1,0 +1,123 @@
+/* Root variables for easy customization */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #a4bfc2;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3;
+    --button-text-color: #fff;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 8px;
+    --box-shadow-color-start: rgba(106, 109, 181, 0.914);
+    --box-shadow-color-mid: rgba(46, 50, 169, 0.914);
+    --box-shadow-color-end: rgba(21, 0, 255, 0.3);
+    --box-shadow: 0 6px 10px var(--box-shadow-color-start);
+}
+
+/* Basic reset for margins and padding */
+body, ul, li, h1, p, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container settings */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #bbe5ff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    animation: boxShadowAnimation 5s infinite alternate;
+}
+
+/* Stopwatch display settings */
+.stopwatch {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Time display settings */
+.time-display {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Button styles */
+.button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* Lap list settings */
+.laps {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.lap-item {
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.lap-item span {
+    font-weight: bold;
+}
+
+/* Scrollbar styling for lap list */
+.laps::-webkit-scrollbar {
+    width: 6px;
+}
+
+.laps::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+}
+
+.laps::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
+
+/* Box shadow color animation */
+@keyframes boxShadowAnimation {
+    0% {
+        box-shadow: 0 4px 8px var(--box-shadow-color-start);
+    }
+    50% {
+        box-shadow: 0 6px 10px var(--box-shadow-color-mid);
+    }
+    100% {
+        box-shadow: 0 6px 10px var(--box-shadow-color-end);
+    }
+}
